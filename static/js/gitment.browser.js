@@ -2983,8 +2983,9 @@ function renderComments(_ref2, instance) {
                       
   });
  
-  commentsList.html(commentsList.children().get().reverse())
-  container.appendChild(commentsList);
+  var commentsList_reverse = document.createElement('ul');
+  commentsList_reverse.append(commentsList.children().get().reverse());
+  container.appendChild(commentsList_reverse);
 
   if (meta) {
     var pageCount = Math.ceil(meta.comments / instance.perPage);
