@@ -2932,6 +2932,7 @@ function renderComments(_ref2, instance) {
 
   var commentsList = document.createElement('ul');
   commentsList.className = 'gitment-comments-list';
+  commentsList.id="coms-id";
 
   comments.forEach(function (comment) {
     var createDate = new Date(comment.created_at);
@@ -2976,17 +2977,13 @@ function renderComments(_ref2, instance) {
     };
     commentItem.appendChild(imgTrigger);
 
-                    if (commentsList.firstChild)
-                    {
-                        commentsList.insertBefore(commentItem,commentsList.firstChild);
-                    }
-                      else
-                      {
-                          commentsList.appendChild(commentItem);
-                      }
+
+    commentsList.appendChild(commentItem);
+                 
                       
   });
-
+ 
+  commentsList.html(commentsList.children().get().reverse())
   container.appendChild(commentsList);
 
   if (meta) {
