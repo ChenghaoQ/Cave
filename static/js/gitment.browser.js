@@ -2932,7 +2932,7 @@ function renderComments(_ref2, instance) {
 
   var commentsList = document.createElement('ul');
   commentsList.className = 'gitment-comments-list';
-
+  commentsList.id = 'comlist';
   comments.forEach(function (comment) {
     var createDate = new Date(comment.created_at);
     var updateDate = new Date(comment.updated_at);
@@ -2979,7 +2979,8 @@ function renderComments(_ref2, instance) {
     commentsList.appendChild(commentItem);
   });
   //console.log(commentsList.children().length);
-  // commentsList.append(commentsList.children().get().reverse());	
+  // commentsList.append(commentsList.children().get().reverse());
+commentsList.append(commentsList.children().get().reverse())
   container.appendChild(commentsList);
 
   if (meta) {
