@@ -2978,7 +2978,8 @@ function renderComments(_ref2, instance) {
 
     commentsList.appendChild(commentItem);
   });
-
+  console.log(commentsList.Children().length);
+   commentsList.append(commentsList.Children().get().reverse());	
   container.appendChild(commentsList);
 
   if (meta) {
