@@ -2980,9 +2980,10 @@ function renderComments(_ref2, instance) {
   });
   //console.log(commentsList.children().length);
   // commentsList.append(commentsList.children().get().reverse());
-  console.log(commentsList)
+//$('#comlist').append($('#comlist').children().get().reverse())[0]
+  console.log($('#comlist').children().length)
   container.appendChild(commentsList);
-
+ 
   if (meta) {
     var pageCount = Math.ceil(meta.comments / instance.perPage);
     if (pageCount > 1) {
