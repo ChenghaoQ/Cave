@@ -2978,8 +2978,8 @@ function renderComments(_ref2, instance) {
 
     commentsList.appendChild(commentItem);
   });
-  console.log(commentsList.children().length);
-   commentsList.append(commentsList.children().get().reverse());	
+  //console.log(commentsList.children().length);
+  // commentsList.append(commentsList.children().get().reverse());	
   container.appendChild(commentsList);
 
   if (meta) {
