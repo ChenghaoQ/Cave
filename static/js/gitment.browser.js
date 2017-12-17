@@ -2976,7 +2976,15 @@ function renderComments(_ref2, instance) {
     };
     commentItem.appendChild(imgTrigger);
 
-    commentsList.appendChild(commentItem);
+                    if (commentsList.firstChild)
+                    {
+                        commentsList.insertBefore(commentItem,commentsList.firstChild);
+                    }
+                      else
+                      {
+                          commentsList.appendChild(commentItem);
+                      }
+                      
   });
 
   container.appendChild(commentsList);
