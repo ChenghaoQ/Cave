@@ -2980,8 +2980,8 @@ function renderComments(_ref2, instance) {
   });
   //console.log(commentsList.children().length);
   // commentsList.append(commentsList.children().get().reverse());
-//$('#comlist').append($('#comlist').children().get().reverse())[0]
-  console.log(typeof(commentsList))
+for(var i=0,i<commentsList.children.length,i++){commentsList.appendChild(commentsList.firstChild)}
+  console.log(commentsList.children.length)
   container.appendChild(commentsList);
  
   if (meta) {
