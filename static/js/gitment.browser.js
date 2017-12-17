@@ -2980,7 +2980,7 @@ function renderComments(_ref2, instance) {
   });
   //console.log(commentsList.children().length);
   // commentsList.append(commentsList.children().get().reverse());
-commentsList.append(commentsList.children().get().reverse())
+  console.log(commentsList)
   container.appendChild(commentsList);
 
   if (meta) {
