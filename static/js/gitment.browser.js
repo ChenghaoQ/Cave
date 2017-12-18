@@ -2888,7 +2888,7 @@ function renderComments(_ref2, instance) {
       currentPage = _ref2.currentPage,
       user = _ref2.user,
       error = _ref2.error;
-
+  console.log(comments,'aaa');
   var container = document.createElement('div');
   container.lang = "en-US";
   container.className = 'gitment-container gitment-comments-container';
@@ -2896,7 +2896,6 @@ function renderComments(_ref2, instance) {
   if (error) {
     var errorBlock = document.createElement('div');
     errorBlock.className = 'gitment-comments-error';
-
     if (error === _constants.NOT_INITIALIZED_ERROR && user.login && user.login.toLowerCase() === instance.owner.toLowerCase()) {
       var initHint = document.createElement('div');
       var initButton = document.createElement('button');
@@ -2984,14 +2983,14 @@ function renderComments(_ref2, instance) {
   {
     commentsList.insertBefore(commentsList.lastChild,first_marker);
   }*/
-  var commentsList_2 = document.createElement('ul');
+ /* var commentsList_2 = document.createElement('ul');
   for(var i =0;i<commentsList.children.length;i++)
   {
 	  commentsList_2.appendChild(commentsList.lastChild);
 	  commentsList.removeChild(commentsList.lastChild);
   }
-  console.log(commentsList.children.length)
-  container.appendChild(commentsList_2);
+  console.log(commentsList.children.length)*/
+  container.appendChild(commentsList);
  
   if (meta) {
     var pageCount = Math.ceil(meta.comments / instance.perPage);
