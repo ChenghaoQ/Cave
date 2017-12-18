@@ -2979,17 +2979,19 @@ function renderComments(_ref2, instance) {
     commentsList.appendChild(commentItem);
   });
 
-/*for(var i=0,i<commentsList.children.length,i++)
-{
-	commentsList.appendChild(commentsList.firstChild)
-}*/
-  var first_marker = commentsList.firstChild;
+  /*var first_marker = commentsList.firstChild;
   for(var i =0;i<commentsList.children.length;i++)
   {
     commentsList.insertBefore(commentsList.lastChild,first_marker);
+  }*/
+  var commentsList_2 = document.createElement('ul');
+  for(var i =0;i<commentsList.children.length;i++)
+  {
+	  commentsList_2.appendChild(commentsList.lastChild);
+	  commentsList.removeChild(commentsList.lastChild);
   }
   console.log(commentsList.children.length)
-  container.appendChild(commentsList);
+  container.appendChild(commentsList_2);
  
   if (meta) {
     var pageCount = Math.ceil(meta.comments / instance.perPage);
