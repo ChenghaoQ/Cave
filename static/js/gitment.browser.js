@@ -2986,7 +2986,7 @@ function renderComments(_ref2, instance) {
   var first_marker = commentsList.firstChild;
   for(var i =0;i<commentsList.children.length;i++)
   {
-    commentsList.insertBefore(commentsList.lastChild,commentsList);
+    commentsList.insertBefore(commentsList.lastChild,first_marker);
   }
   console.log(commentsList.children.length)
   container.appendChild(commentsList);
