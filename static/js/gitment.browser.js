@@ -2883,7 +2883,7 @@ function renderHeader(_ref, instance) {
 
 function renderComments(_ref2, instance) {
   var meta = _ref2.meta,
-      comments = _ref2.comments,
+      comments = _ref2.comments.reverse(),
       commentReactions = _ref2.commentReactions,
       currentPage = _ref2.currentPage,
       user = _ref2.user,
