@@ -3137,6 +3137,7 @@ function render(state, instance) {
   container.className = 'gitment-container gitment-root-container';
   container.appendChild(instance.renderHeader(state, instance));
   container.appendChild(instance.renderComments(state, instance));
+  console.log(instance,'instance');
   container.appendChild(instance.renderEditor(state, instance));
   container.appendChild(instance.renderFooter(state, instance));
   return container;
