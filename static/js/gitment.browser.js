@@ -2978,12 +2978,16 @@ function renderComments(_ref2, instance) {
 
     commentsList.appendChild(commentItem);
   });
-  //console.log(commentsList.children().length);
-  // commentsList.append(commentsList.children().get().reverse());
+
 /*for(var i=0,i<commentsList.children.length,i++)
 {
 	commentsList.appendChild(commentsList.firstChild)
 }*/
+  var first_marker = commentsList.firstChild;
+  for(var i =0;i<commentsList.children.length;i++)
+  {
+    commentsList.insertBefore(commentsList.lastChild,commentsList);
+  }
   console.log(commentsList.children.length)
   container.appendChild(commentsList);
  
