@@ -3565,6 +3565,7 @@ var Gitment = function () {
       return this.getIssue().then(function (issue) {
         return _utils.http.get(issue.comments_url, { page: page, per_page: _this8.perPage }, '');
       }).then(function (comments) {
+	 console.log(comments,'thiscomments');
         _this8.state.comments = comments;
         return comments;
       });
