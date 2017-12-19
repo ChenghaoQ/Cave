@@ -3136,12 +3136,8 @@ function render(state, instance) {
   container.lang = "en-US";
   container.className = 'gitment-container gitment-root-container';
   container.appendChild(instance.renderHeader(state, instance));
-  container.appendChild(instance.renderComments(state, instance));
-  console.log(instance,'instance');
-  console.log(state,'state');
-  console.log(state.comments,'statecomm');
-  console.log(state.meta,'statemeta');
   container.appendChild(instance.renderEditor(state, instance));
+  container.appendChild(instance.renderComments(state, instance));
   container.appendChild(instance.renderFooter(state, instance));
   return container;
 }
