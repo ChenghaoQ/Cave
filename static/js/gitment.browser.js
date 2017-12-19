@@ -3016,7 +3016,7 @@ function renderComments(_ref2, instance) {
           return instance.goto(i);
         };
         if (currentPage === i) pageItem.classList.add('gitment-selected');
-        pagination.appendChild(pageItem);
+        pagination.insertAfter(pageItem,previousButton);
       };
 
       for (var i = 1; i <= pageCount; i++) {
