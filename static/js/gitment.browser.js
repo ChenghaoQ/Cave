@@ -2883,12 +2883,12 @@ function renderHeader(_ref, instance) {
 
 function renderComments(_ref2, instance) {
   var meta = _ref2.meta,
-      comments = _ref2.comments.reverse(),
+      comments = _ref2.comments,
       commentReactions = _ref2.commentReactions,
       currentPage = _ref2.currentPage,
       user = _ref2.user,
       error = _ref2.error;
-  console.log(comments,'aaa');
+
   var container = document.createElement('div');
   container.lang = "en-US";
   container.className = 'gitment-container gitment-comments-container';
@@ -2896,6 +2896,7 @@ function renderComments(_ref2, instance) {
   if (error) {
     var errorBlock = document.createElement('div');
     errorBlock.className = 'gitment-comments-error';
+
     if (error === _constants.NOT_INITIALIZED_ERROR && user.login && user.login.toLowerCase() === instance.owner.toLowerCase()) {
       var initHint = document.createElement('div');
       var initButton = document.createElement('button');
@@ -2931,7 +2932,7 @@ function renderComments(_ref2, instance) {
 
   var commentsList = document.createElement('ul');
   commentsList.className = 'gitment-comments-list';
-  commentsList.id = 'comlist';
+
   comments.forEach(function (comment) {
     var createDate = new Date(comment.created_at);
     var updateDate = new Date(comment.updated_at);
@@ -2978,20 +2979,8 @@ function renderComments(_ref2, instance) {
     commentsList.appendChild(commentItem);
   });
 
-  /*var first_marker = commentsList.firstChild;
-  for(var i =0;i<commentsList.children.length;i++)
-  {
-    commentsList.insertBefore(commentsList.lastChild,first_marker);
-  }*/
- /* var commentsList_2 = document.createElement('ul');
-  for(var i =0;i<commentsList.children.length;i++)
-  {
-	  commentsList_2.appendChild(commentsList.lastChild);
-	  commentsList.removeChild(commentsList.lastChild);
-  }
-  console.log(commentsList.children.length)*/
   container.appendChild(commentsList);
- 
+
   if (meta) {
     var pageCount = Math.ceil(meta.comments / instance.perPage);
     if (pageCount > 1) {
@@ -3136,8 +3125,8 @@ function render(state, instance) {
   container.lang = "en-US";
   container.className = 'gitment-container gitment-root-container';
   container.appendChild(instance.renderHeader(state, instance));
-  container.appendChild(instance.renderEditor(state, instance));
   container.appendChild(instance.renderComments(state, instance));
+  container.appendChild(instance.renderEditor(state, instance));
   container.appendChild(instance.renderFooter(state, instance));
   return container;
 }
@@ -3561,7 +3550,6 @@ var Gitment = function () {
       return this.getIssue().then(function (issue) {
         return _utils.http.get(issue.comments_url, { page: page, per_page: _this8.perPage }, '');
       }).then(function (comments) {
-	 console.log(comments,'thiscomments');
         _this8.state.comments = comments;
         return comments;
       });
