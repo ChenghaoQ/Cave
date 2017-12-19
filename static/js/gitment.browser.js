@@ -3016,7 +3016,7 @@ function renderComments(_ref2, instance) {
           return instance.goto(i);
         };
         if (currentPage === i) pageItem.classList.add('gitment-selected');
-        pagination.insertAfter(pageItem,previousButton);
+        pagination.appendChild(pageItem);
       };
 
       for (var i = 1; i <= pageCount; i++) {
@@ -3138,6 +3138,9 @@ function render(state, instance) {
   container.appendChild(instance.renderHeader(state, instance));
   container.appendChild(instance.renderComments(state, instance));
   console.log(instance,'instance');
+  console.log(state,'state');
+  console.log(state.comments,'statecomm');
+  console.log(state.meta,'statemeta');
   container.appendChild(instance.renderEditor(state, instance));
   container.appendChild(instance.renderFooter(state, instance));
   return container;
